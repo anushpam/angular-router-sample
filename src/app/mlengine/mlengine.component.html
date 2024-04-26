@@ -1,0 +1,21 @@
+<p>Input review for fake detection</p>
+<!-- data.component.html -->
+
+<div>
+  <!-- Input box -->
+  <input value="" type="text" size="200%" class="form-control" [formControl]="inputControl"  [(ngModel)]="inputText" placeholder="Enter Review"  aria-describedby="basic-addon2"  >
+
+
+  <!-- Button to trigger an action -->
+  <button (click)="processInput()">Process</button>
+</div>
+
+<div *ngIf="loading" class="loading-icon">
+  <!-- Loading icon, e.g., spinner or progress bar -->
+  <i class="fas fa-spinner fa-spin"></i> Loading...
+</div>
+<div >
+  <!-- Output text panel -->
+  <h4>Prediction</h4>
+  <p>{{ outputText }}</p>
+</div>

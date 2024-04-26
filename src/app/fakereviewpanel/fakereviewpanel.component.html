@@ -1,0 +1,33 @@
+<h3>Sample Reviews for Demo</h3>
+
+<!-- data.component.html -->
+<!-- component.html -->
+
+<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> True Positive
+<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> True Negative
+<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> Flase Positive
+<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> False Negative
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Target Labels</th>
+      <th></th>
+      <th>Reviews</th>
+      <!-- Add more headers as needed -->
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let result of jsonData">
+      <td>{{ result.Target }}</td>
+      <td><button (click)="copyToClipboard(result.Review)">Copy</button></td>
+      <td>{{ result.Review }}</td>
+      <!-- Display other properties accordingly -->
+    </tr>
+  </tbody>
+</table>
+<!-- component-b.component.html -->
+
+
