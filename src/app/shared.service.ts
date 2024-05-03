@@ -8,6 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
   sharedData: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-
+  target: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor() { }
 }

@@ -12,13 +12,13 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:8000/reviewlist');
+    return this.http.get<any>('http://65.2.116.166:8000/reviewlist');
   }
 
 
 
   postReview(textData: string): Observable<string> {
     // Replace 'your-api-endpoint' with your actual API endpoint
-    return this.http.post<string>('http://127.0.0.1:8000/detectFakeReview', { "reviewText": textData });
+    return this.http.post<string>('http://65.2.116.166:8000/detectFakeReview', { "reviewText": textData });
   }
 }

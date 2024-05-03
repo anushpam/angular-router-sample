@@ -1,12 +1,35 @@
-<h3>Sample Reviews for Demo</h3>
+<div class="table-banner">
+  <h2>Sample Reviews for Demo</h2>
+</div>
 
-<!-- data.component.html -->
-<!-- component.html -->
 
-<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> True Positive
-<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> True Negative
-<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> Flase Positive
-<input type="checkbox" [(ngModel)]="filterValue" (change)="applyFilter()"> False Negative
+
+<div class="radio">
+  <form id="filterForm">
+    <label>
+        <input type="radio" name="filter" (change)="applyFilter('all')" checked>
+        All
+    </label>
+    <label>
+        <input type="radio" name="filter" (change)="applyFilter('True Positive')" value="option1" >
+        True Positive
+    </label>
+    <label>
+        <input type="radio" name="filter" (change)="applyFilter('True Negative')" value="option2">
+        True Negative
+    </label>
+    <label>
+        <input type="radio" name="filter" (change)="applyFilter('False Positive')" value="option3">
+        Flase Positive
+    </label>
+    <label>
+        <input type="radio" name="filter" (change)="applyFilter('False Negative')" value="option4">
+        False Negative
+    </label>
+    <!-- Add more radio buttons as needed -->
+  </form>
+
+</div>
 
 <table>
   <thead>
@@ -20,9 +43,9 @@
   </thead>
   <tbody>
 
-    <tr *ngFor="let result of jsonData">
+    <tr *ngFor="let result of filteredData">
       <td>{{ result.Target }}</td>
-      <td><button (click)="copyToClipboard(result.Review)">Copy</button></td>
+      <td><button (click)="copyToClipboard(result.Review, result.Target)">Copy</button></td>
       <td>{{ result.Review }}</td>
       <!-- Display other properties accordingly -->
     </tr>
